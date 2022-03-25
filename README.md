@@ -65,7 +65,7 @@ Contacto.
 
 ## Participantes
 * [Gerardo Reyna Ibarra]()
-* [Anastasio Rodríguez García]()
+* [Anastacio Rodríguez García]()
 * [Gabriel Barrón Rodríguez]()
 
 [contribuidores-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
