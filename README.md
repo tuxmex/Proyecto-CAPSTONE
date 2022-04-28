@@ -13,6 +13,7 @@
     </li>
     <li>
       <a href="#iniciando">Iniciando</a>
+      <img src="https://developer.mozilla.org/assets/mdn_contributor.png">
       <ul>
         <li><a href="#requisitos">Prerrequisitos</a></li>
         <li><a href="#instalacion">Instalación</a></li>
