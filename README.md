@@ -34,10 +34,11 @@
 **Smart Green Wall**
 
 **SGW-Pared Verde Inteligente para Casa-Habitación:**
-### Justificación del proyecto
-Existen numerosos factores biológicos, psicológicos y sociales con impacto más o menos prominente en la salud mental de las personas adultas mayores. Aparte de componentes derivados de los procesos normales de envejecimiento o de la coocurrencia de enfermedades médicas diversas, eventos como la muerte de un ser querido, la jubilación o la discapacidad, contribuyen significativamente a una variedad de problemas mentales o emocionales en esta fase del ciclo vital.
 
-El presente proyecto se enfoca principalmente en adultos mayores de la tercera edad, que debido su avanzada edad ésta presenta discapacidades físicas que le impiden realizar actividades cotidianas que normalmente realizaba, la actividad de regado de plantas en el hogar ofrece grandes beneficios según varios estudios revelan que:
+### Justificación del proyecto
+> Existen numerosos factores biológicos, psicológicos y sociales con impacto prominente en la salud mental de las personas adultas mayores como la demencia y depresión, siendo éstas las que mas se presentan este grupo de personas. Aparte, de componentes derivados de los procesos normales de envejecimiento o de enfermedades médicas diversas, eventos como la muerte de un ser querido, la jubilación o la discapacidad.
+
+> El presente proyecto se enfoca principalmente en adultos mayores de la tercera edad, este grupo de presonas presenta discapacidades físicas que le impiden realizar actividades cotidianas que normalmente realizaba, la actividad de regado de plantas en el hogar ofrece grandes beneficios, según varios estudios revelan que:
 - Media hora diaria dedicada a cuidar plantas reduce significativamente los niveles de estrés.
 - El cuidado de las plantas nos ayuda a desconectar, aumentan nuestra autoestima y capacidad de organización.
 - Nos ayudan a socializar.
@@ -45,15 +46,15 @@ El presente proyecto se enfoca principalmente en adultos mayores de la tercera e
 - Aumentan la sensación de amor en el hogar.
 - Organizar nuestra mente.
 
-Para la ejecución y puesta en el marcha del proyecto se implementará con un sistema de Internet de las cosas y un sistema móvil que nos permita controlar y semi-automatizar el riego de las plantas a través de sensores que medirán la temperatura, humedad, Ph, luminosidad. Actuadores, que permitirán realizar el riego semi-automatizado e indicar mediante una aplicación web el estado o condiciones de las variables antes mencionadas; por último, una aplicación móvil que moninotera y controla el riego .  
+> Para la ejecución y puesta en el marcha del proyecto, se implementará un sistema de Internet de las Cosas y un Sistema Móvil, que permita controlar y semi-automatizar el riego de plantas a través de sensores que medirán la temperatura, humedad, Ph, luminosidad. Actuadores, que permitirán realizar el riego semi-automatizado e indicar mediante una aplicación web, el estado o condiciones de las variables antes mencionadas; por último, una aplicación móvil que moninoterea y controla el riego.
 
 ### Objetivo del proyecto: 
 
-> _Apoyar a adultos mayores con limitaciónes físicas por la edad mediante un sistema de IoT para riego semiautomatizado de plantas en el hogar._
+> Apoyar a adultos mayores con limitaciónes físicas por la edad mediante un sistema de IoT para riego semiautomatizado de plantas en el hogar.
 
 ### Descripción general del proyecto
 
-> _Este proyecto consiste generar un prototipo que propone optimizar el riego y cuidado de plantas a través del análisis de datos tomados por los sensores, validando decisiones que actúen en los lugares donde los usuarios tienen difícil acceso automatizando tareas para personas adultas mayores._   
+> Este proyecto consiste generar un prototipo que propone optimizar el riego y cuidado de plantas a través del análisis de datos tomados por los sensores, validando decisiones que actúen en los lugares donde los usuarios tienen difícil acceso automatizando tareas para personas adultas mayores.  
 
 
 ### Material de uso:
