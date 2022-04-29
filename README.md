@@ -29,7 +29,139 @@
 
 <!-- Acerca del proyecto -->
 ## Acerca del proyecto
-Requisitos.
+
+### Nombre del proyecto
+**Smart Green Wall**
+
+**SGW-Pared Verde Inteligente para Casa-Habitación:**
+### Justificación del proyecto
+
+
+### Objetivo del proyecto: 
+
+> _Apoyar a adultos mayores con limitaciónes físicas por la edad mediante un sistema de IoT para riego semiautomatizado de plantas en el hogar._
+
+### Descripción general del proyecto
+
+> _Este proyecto consiste generar un prototipo que propone optimizar el riego y cuidado de plantas a través del análisis de datos tomados por los sensores, validando decisiones que actúen en los lugares donde los usuarios tienen difícil acceso automatizando tareas para personas adultas mayores._   
+
+
+### Material de uso:
+
+<table> <tr> <th>Componente</th><th>Imagen</th><th>Descripción</th><th>Cantidad</th></tr>
+  <tr>
+    <td>Raspberry Pi 4</td>
+    <td></td>
+    <td></td>
+    <td>1</td>
+  </tr> 
+  <tr>
+    <td>ESP32 Cam</td>
+    <td></td>
+    <td></td>
+    <td>1</td>
+  </tr> 
+  <tr>
+    <td>Sensor DHT11</td>
+    <td></td>
+    <td>Temperatura y Humedad</td>
+    <td>1</td>
+  </tr> 
+    <tr>
+    <td>Sensor de Humedad Tierra LY69</td>
+    <td></td>
+    <td></td>
+    <td>1</td>
+  </tr> 
+  <tr>
+    <td>Sensor de PH014</td>
+    <td></td>
+    <td></td>
+    <td>1</td>
+  </tr> 
+  <tr>
+    <td>Fotoresistencia</td>
+    <td></td>
+    <td></td>
+    <td>1</td>
+  </tr> 
+  <tr>
+    <td>Sensor de Lluvia</td>
+    <td></td>
+    <td></td>
+    <td>1</td>
+  </tr> 
+
+  <tr>
+    <td>Válvula actuador de flujo de bomba de agua</td>
+    <td></td>
+    <td></td>
+    <td>1</td>
+  </tr> 
+  <tr>
+    <td>Motor a pasos</td>
+    <td></td>
+    <td></td>
+    <td>4</td>
+  </tr> 
+    <tr>
+    <td>Relevador</td>
+    <td></td>
+      <td></td>
+    <td>4</td>
+  </tr> 
+    <tr>
+    <td>Motor CD</td>
+    <td></td>
+      <td></td>
+    <td>4</td>
+  </tr> 
+</table>
+
+#### Requerimientos
+<table>
+  <tr>
+    <th>No.</th>
+      <th>Requerimiento</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Medición de variables a partir de sensores de temperatura, humedad, PH, lluvia, luminosidad.</td>
+  </tr>
+  
+  <tr>
+    <td>2</td>
+    <td>Almacenamiento de datos de manera continua y permanente.</td>
+  </tr>
+  
+  <tr>
+    <td>3</td>
+    <td>Graficar los datos almacenados para su análisis en línea</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Activar el riego automatizado de acuerdo al analisis de datos.</td>
+  </tr>
+  
+  <tr>
+    <td>5</td>
+    <td>Control a partir de aplicación móvil de riego, sombra y protección.</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Notificar alertas a partir del estado de las variables que involucren un riesgo para la planta.</td>
+  </tr>
+</table>
+
+#### Diagrama inicial
+
+![image](https://user-images.githubusercontent.com/96089377/165986643-432dfef7-ffff-4755-a768-ecdb5e8252b4.png)
+
+### Prototipo de pared verde
+
+
+<!-- Construido con -->
+
 
 <!-- Construido con -->
 ### Construido con
