@@ -43,9 +43,9 @@ a# Proyecto CapStone UTNG
 -	Media hora diaria dedicada a cuidar plantas reduce significativamente los niveles de estrés.
 - El cuidado de las plantas nos ayuda a desconectar, aumentan nuestra autoestima y capacidad de organización.
 -	Nos ayudan a socializar.
-•	Seguir adquiriendo responsabilidades.
-•	Aumentan la sensación de amor en el hogar.
-•	Organizar nuestra mente
+- Seguir adquiriendo responsabilidades.
+- Aumentan la sensación de amor en el hogar.
+- Organizar nuestra mente
 
 > Para la ejecución y puesta en el marcha del proyecto, se implementará un sistema de Internet de las Cosas y un Sistema Móvil, que permita controlar y semi-automatizar el riego de plantas a través de sensores que medirán la temperatura, humedad, PH, luminosidad. Actuadores, que permitirán realizar el riego semi-automatizado e indicar mediante una aplicación web, el estado o condiciones de las variables antes mencionadas; por último, una aplicación móvil que monitorea y controla el riego.
 
