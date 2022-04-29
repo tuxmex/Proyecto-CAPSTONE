@@ -36,6 +36,18 @@ a# Proyecto CapStone UTNG
 **SGW-Pared Verde Inteligente para Casa-Habitación:**
 ### Justificación del proyecto
 
+Existen numerosos factores biológicos, psicológicos y sociales con impacto prominente en la salud mental de las personas adultas mayores, como la demencia y depresión, siendo éstas las que más se presentan este grupo de personas. Aparte, de componentes derivados de los procesos normales de envejecimiento o de enfermedades médicas diversas, eventos como la muerte de un ser querido, la jubilación o la discapacidad.
+
+El presente proyecto se enfoca principalmente en adultos mayores de la tercera edad, este grupo de presonas presenta discapacidades físicas que le impiden realizar actividades cotidianas que normalmente realizaba, la actividad de regado de plantas en el hogar ofrece grandes beneficios, según varios estudios revelan que:
+
+>   Media hora diaria dedicada a cuidar plantas reduce significativamente los niveles de estrés.
+    El cuidado de las plantas nos ayuda a desconectar, aumentan nuestra autoestima y capacidad de organización.
+    Nos ayudan a socializar.
+    Seguir adquiriendo responsabilidades.
+    Aumentan la sensación de amor en el hogar.
+    Organizar nuestra mente.
+
+Para la ejecución y puesta en el marcha del proyecto, se implementará un sistema de Internet de las Cosas y un Sistema Móvil, que permita controlar y semi-automatizar el riego de plantas a través de sensores que medirán la temperatura, humedad, PH, luminosidad. Actuadores, que permitirán realizar el riego semi-automatizado e indicar mediante una aplicación web, el estado o condiciones de las variables antes mencionadas; por último, una aplicación móvil que monitorea y controla el riego.
 
 ### Objetivo del proyecto: 
 
