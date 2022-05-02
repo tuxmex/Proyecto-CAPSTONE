@@ -51,11 +51,11 @@ a# Proyecto CapStone UTNG
 
 ### Objetivo del proyecto: 
 
-> _Apoyar a adultos mayores con limitaciónes físicas por la edad mediante un sistema de IoT para riego semiautomatizado de plantas en el hogar._
+> Apoyar a adultos mayores con limitaciónes físicas por la edad mediante un sistema de IoT para riego semiautomatizado de plantas en el hogar.
 
 ### Descripción general del proyecto
 
-> _Este proyecto consiste generar un prototipo que propone optimizar el riego y cuidado de plantas a través del análisis de datos tomados por los sensores, validando decisiones que actúen en los lugares donde los usuarios tienen difícil acceso automatizando tareas para personas adultas mayores._   
+> Este proyecto consiste generar un prototipo que propone optimizar el riego y cuidado de plantas a través del análisis de datos tomados por los sensores, validando decisiones que actúen en los lugares donde los usuarios tienen difícil acceso automatizando tareas para personas adultas mayores.
 
 
 ### Material de uso:
