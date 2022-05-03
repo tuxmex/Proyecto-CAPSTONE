@@ -186,6 +186,7 @@ Output: Conector hacia la carga(ejemplo, bombilla, bomba de agua,etc). La termin
 ![image](https://user-images.githubusercontent.com/96089377/165986643-432dfef7-ffff-4755-a768-ecdb5e8252b4.png)
 
 ### Prototipo de pared verde
+![imagen](https://user-images.githubusercontent.com/36056832/166520658-95661b1e-7ce6-48ab-9b76-34030a963e9d.png)
 
 
 <!-- Construido con -->
