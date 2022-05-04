@@ -189,6 +189,17 @@ Output: Conector hacia la carga(ejemplo, bombilla, bomba de agua,etc). La termin
 
 ![imagen](https://user-images.githubusercontent.com/36056832/166520964-2165f99c-b8d2-48a4-a73e-a8643ec4cf40.png)
 
+## Diagrama de Gantt
+
+![imagen](https://user-images.githubusercontent.com/36056832/166818332-4af82aa6-f227-4822-8b7d-903e7d12db7f.png)
+![imagen](https://user-images.githubusercontent.com/36056832/166818508-185b7353-c205-4ee8-b571-563a1fdf220d.png)
+![imagen](https://user-images.githubusercontent.com/36056832/166818681-69eaa091-6b1a-4ad3-8b21-9b3197542efa.png)
+![imagen](https://user-images.githubusercontent.com/36056832/166818792-ef5d557e-3535-4b40-9730-68eff4768e08.png)
+![imagen](https://user-images.githubusercontent.com/36056832/166818871-298a5a7b-f264-483e-a8d4-28888a666edb.png)
+![imagen](https://user-images.githubusercontent.com/36056832/166818935-b87964d3-4344-4dd1-b6a0-9930bdf452eb.png)
+![imagen](https://user-images.githubusercontent.com/36056832/166819014-fa06e4d0-f407-45f9-a57e-38289ecaf25c.png)
+![imagen](https://user-images.githubusercontent.com/36056832/166819094-27be48c1-634b-4f48-9249-5cc6cba5e143.png)
+
 
 <!-- Construido con -->
 
@@ -227,7 +238,7 @@ Contacto.
 
 ## Participantes
 * [Gerardo Reyna Ibarra]()
-* [Anastasio Rodríguez García]()
+* [Anastacio Rodríguez García]()
 * [Gabriel Barrón Rodríguez]()
 
 [contribuidores-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
