@@ -31,35 +31,28 @@
 ## Acerca del proyecto
 
 ### Nombre del proyecto
-**Smart Green Wall**
+**Smart Craft Sales Dolores Hidalgo**
 
-**SGW-Pared Verde Inteligente para Casa-Habitación:**
 ### Justificación del proyecto
 
-> Existen numerosos factores biológicos, psicológicos y sociales con impacto prominente en la salud mental de las personas adultas mayores, como la demencia y depresión, siendo éstas las que más se presentan este grupo de personas. Aparte, de componentes derivados de los procesos normales de envejecimiento o de enfermedades médicas diversas, eventos como la muerte de un ser querido, la jubilación o la discapacidad.
+> El mejor servicio al cliente que podemos tener, es no tener la necesidad de usar el servicio al cliente.
 
-> El presente proyecto se enfoca principalmente en adultos mayores de la tercera edad, este grupo de presonas presenta discapacidades físicas que le impiden realizar actividades cotidianas que normalmente realizaba, la actividad de regado de plantas en el hogar ofrece grandes beneficios, según varios estudios revelan que:
+> El servicio al cliente bajo la óptica del Internet de las Cosas se vuelve una actividad esencial, automática, proactiva y constante. El mejor servicio al cliente es aquel que logramos visualizar antes que los clientes noten el problema; y para ello, necesitas modificar tus operaciones y flujos de trabajo.
 
--	Media hora diaria dedicada a cuidar plantas reduce significativamente los niveles de estrés.
-- El cuidado de las plantas nos ayuda a desconectar, aumentan nuestra autoestima y capacidad de organización.
--	Nos ayudan a socializar.
-- Seguir adquiriendo responsabilidades.
-- Aumentan la sensación de amor en el hogar.
-- Organizar nuestra mente
-
-> Para la ejecución y puesta en el marcha del proyecto, se implementará un sistema de Internet de las Cosas y un Sistema Móvil, que permita controlar y semi-automatizar el riego de plantas a través de sensores que medirán la temperatura, humedad, PH, luminosidad. Actuadores, que permitirán realizar el riego semi-automatizado e indicar mediante una aplicación web, el estado o condiciones de las variables antes mencionadas; por último, una aplicación móvil que monitorea y controla el riego.
+> Dolores Hidalgo se encuentra en la zona norte del estado de Guanajuato, pocas ciudades del país pueden decir que viven completamente de la artesanía. El centro de  Dolores Hidalgo, Guanajuato, encontrarás calles repletas de todo tipo de objetos artesanales cerámicos. Además de ser cuna de la Independencia Nacional, Dolores Hidalgo es una población fantástica donde innumerables alfareros y ceramistas han hecho de la cerámica de talavera su forma de vida al trabajarla en diversas formas  y tonos multicolores que engalanan al México popular país con un hondo espíritu folclórico.
+> El principal turista de ocio que llega a la Cuna de la Independencia, es de tipo familiar por el potencial que tenemos en el personaje de José Alfredo Jiménez y la cerámica tipo Talavera, pero una de los grandes incovenientes es que el turista dura en la ciudad de uno a dos días y después se van a otras ciudades como Guanajuato, San Miguel de Allende, San Luis de la Paz. Generalmente, los pequeños negocios de artesanías que comercializan los productos de Talavera contratan a personal femenino para el servicio de atención al cliente, pero una de las grandes inquietudes que tienen los empresarios de los estos comercios es usar la tecnología para atrapar al turista e incrementar sus ventas. 
 
 ### Objetivo del proyecto: 
 
-> Apoyar a adultos mayores con limitaciónes físicas por la edad mediante un sistema de IoT para riego semiautomatizado de plantas en el hogar.
+> Impulsar el incremento de ventas de los pequeños comercios de comercializan Talavera y Cerámica mediante el uso de la tecnología del Internet de las Cosas que ayuden a eficientar la atención al cliente y una experiencia agradable en el comercio.
 
 ### Descripción general del proyecto
 
-> Este proyecto consiste generar un prototipo que propone optimizar el riego y cuidado de plantas a través del análisis de datos tomados por los sensores, validando decisiones que actúen en los lugares donde los usuarios tienen difícil acceso automatizando tareas para personas adultas mayores.
+> Este proyecto consiste generar un prototipo que propone incrementar ventas mediante experiencia de usuario agradables en los comercios de artesanías en la ciudad de Dolores Hidalgo CIN,  a través de un sistema IoT. Consta de sensores que capturan datos del entorno como el rostro del cliente, lectura de QR y realidad aumentada para conocer la descripción y detalles del producto; así como actuadores que responderán para dar la bienvenida al usuario, cuando un usuario solicite atención enviará notificaciones para recibir atención del Usuario.
+> El dueño del establecimiento podrá observar estadísticas mediante análisis de datos sobre el número de clientes que ingresan al establecimiento, los clientes que lograron realizar la venta y la salida de satisfacción del cliente. 
 
 
 ### Material de uso:
-
 <table> <tr> <th>Componente</th><th>Imagen</th><th>Descripción</th><th>Cantidad</th></tr>
   <tr>
     <td>Raspberry Pi 4</td>
@@ -78,127 +71,75 @@
     <td>1</td>
   </tr> 
   <tr>
-    <td>Sensor DHT11</td>
+    <td>Display LCD 16x2</td>
+    <td><img src="https://user-images.githubusercontent.com/8560750/166756741-813b8a4a-d952-4e20-aa89-b7699ffeb30d.jpg" alt="Lcd Display" width="100"/></td>
     <td>
-    <img src="https://user-images.githubusercontent.com/36056832/165996618-0b719509-9c81-405a-bef5-aabef6623a2b.png" alt="DHT11" width="100"/>
+      <ul>
+        <li>Voltaje: 5 V</li>
+        <li>Un pin de selección de registro (RS) que controla en qué parte de la memoria de la pantalla LCD está escribiendo datos. </li>
+        <li>Un pin de lectura/escritura (R/W) que selecciona el modo de lectura o el modo de escritura</li>
+        <li>Un pin Habilitar que permite escribir en los registros</li>
+        <li>8 pines de datos (D0 -D7) . Los estados de estos pines (alto o bajo) son los bits que estás escribiendo en un registro cuando escribes, o los valores que estás leyendo cuando lees,</li>
+      </ul>
     </td>
-    <td> <ul><li>Alimentación: 3.3 ~ 5 V<li>Rango de medición de temperatura: 0 ~ 50 °C<li>Precisión de medición de temperatura: ± 2.0 °C<li>Resolución Temperatura: 0.1 °C<li>Rango de medición de humedad: 20 % ~ 90 % RH<li>Precisión de medición de humedad: 4 % RH<li>Resolución Humedad: 1 % RH<li>Salida digital<li>Orificio de perno fijo para una fácil instalación</ul></td>
-    <td>1</td>
-  </tr> 
-    <tr>
-    <td>Sensor de Humedad Tierra LY69</td>
-    <td>
-       <img src="https://user-images.githubusercontent.com/36056832/165997309-ef9301b5-2694-467e-8d97-5c2c05bd4918.png" alt="yl-69" width="100"/>
-    </td>
-    <td><ul><li>Voltaje de entrada: 3.3 – 5 VCD<li>A0: Salida analógica que entrega una tensión proporcional a la humedad.<li>D0: Salida digital, este módulo permite ajustar cuando estará en alto y cuando en bajo según la humedad<li>Consiste en una sonda YL - 69 con dos terminales separados adecuadamente y un módulo YL - 38 que contiene un circuito comparador LM393 SMD (de soldado superficial) muy estable, un led de encendido y otro de activación de salida digital. Este último presenta 2 pines de conexión hacia el módulo YL - 69, 2 pines para la alimentación y 2 pines de datos. VCC, GND, D0, A0</ul></td>
     <td>1</td>
   </tr> 
   <tr>
-    <td>Sensor de PH014</td>
+    <td>Lector QR </td>
+    <td><img src="https://user-images.githubusercontent.com/8560750/166768412-b0cddffc-1a08-49cf-a9d5-4d46b3501678.jpg" width="100" alt="Lector de código QR"/> </td>
     <td>
-     <img src="https://user-images.githubusercontent.com/36056832/166008733-66e4407a-3c8f-4bff-bff9-a997bb99a8de.png" alt="Sensor de PH" width="100"/>
+      <ul>
+        <li>Dispositivo móvil con sistema operativo Android 8.0 o superior.</li>
+        <li>App para lectura de QR.</li>
+        <li>Observar detalles y características de producto.</li>
+      </ul>
+      </td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>App de comercio de AR </td>
+    <td><img src="https://user-images.githubusercontent.com/8560750/166763820-c178c82a-4f1f-47fb-9e15-34011bad59f1.jpg" width="100" alt="App de realidad aumentada"/></td>
+    <td>
+      <ul>
+        <li>Dispositivo móvil con sistema operativo Android 8.0 o superior.</li>
+        <li>App de establecimiento.</li>
+        <li>Interactuar con detalles y características de producto.</li>
+      </ul>    
     </td>
-    <td><ul><li>Modulo: PH-4502C <li>Voltaje de Alimentación: 5V <li>Corriente: 10mA <li>Dimensiones: 42 X 32 X 20 mm Electrodo E201-BNC <li>Tipo de sonda: Grado de laboratorio. <li>Tiempo de Respuesta: 5 seg <li>Rango de detección: 0 ~ 14.(acido /base) <li>Rango de temperatura:0 – 80°C <li>Temperatura de trabajo:10~50°C <li>Humedad de trabajo: 95 RH sin condensación</ul> </td>
-    <td>1</td>
-  </tr> 
+    <td>2 </td>
+  </tr>
   <tr>
-    <td>Fotoresistencia</td>
-    <td><img src="https://user-images.githubusercontent.com/36056832/166063254-aa64a4c1-65ac-457a-8662-409cbf5e6833.png" width="100" /></td>
-    <td><ul><li>Función: Detector de luz<li>Chip principal: LM393<li>Voltaje de alimentación mínimo: 3.3 V<li>Voltaje de alimentación máximo: 5 V<li>Tipo de salida: Digital<li>Distribución de pines:<ul><li>Pin de alimentación VCC: 3.3 V - 5 V<li>Pin de alimentación 0 V: GND<li>Pin de OUT: Salida digital<li>Indicador de alimentación: LED rojo<li>Indicador de salida digital: LED verde<li><li>Dimensiones: 41 mm X 14 mm<li>Número de pines: 3
-      Voltaje: 3.3v ~ 5v<li>Comparador LM393<li>Sensibilidad Ajustable</ul></td>
-    <td>1</td>
-  </tr> 
-  <tr>
-    <td>Sensor de Lluvia</td>
+    <td>ISD1820 </td>
+    <td><img src="https://user-images.githubusercontent.com/8560750/166772317-71c55285-568d-478c-aa4a-080df56c719b.jpg" width="100" alt="ISD1820"/></td>
     <td>
-    <img src="https://user-images.githubusercontent.com/36056832/166009366-c9d2c965-0ec4-49e9-9104-ea9cdb06403b.png" alt="Sensor de lluvia" width="100" />
-   </td>
-    <td><ul><li>Tensión de funcionamiento: 3.3V -5 V<li>Sensibilidad ajustable por potenciómetro<li>Modo de salida dual : analógica y digital<li>LED rojo – indicador de encendido<li>LED verde – indicador de salida de conmutación digital<li>Medidas PCB: 3 x 1.5 cm<li>Medidas de sensor: 5.4 x 3.9 cm</ul></td>
+      <ul>
+        <li>Tipo: Módulo grabador de voz y parlante</li>
+        <li>Dimensiones: 42.87mmx 38.55mm x 11.25mm</li>
+        <li>Voltaje de funcionamiento: 3V a 5V DC</li>
+        <li>Altavoz: 8Ω 0.5 W</li>
+        <li>Bocina de 8ohms a 0.5W</li>
+      </ul>
+    </td>
     <td>1</td>
   </tr> 
 
-  <tr>
-    <td>Electro Válvula de pulso +/-4.5V para control de flujo con ahorro de energía para tuberías de 1/2 pulgada cobre</td>
-    <td><img src="https://user-images.githubusercontent.com/36056832/166064811-69640693-dd5d-4715-86e5-f49ec7a59ae4.png" width="100"/></td>
-    <td><ul><li>Totalmente metálico<li>Control de apertura o de cierre con un sólo pulso de &gt;30ms<li>Impedancia de entrada: 9 Ohms +/-5% (@20°C)<li>Temperatura de trabajo: 1 a 80°C<li>Voltaje de trabajo: 4.5V<li>Presión de agua: 0.02 a 1MPa<li>Para apertura, es pulso POSITIVO y para cierre es pulso NEGATIVO</ul></td>
-    <td>1</td>
-  </tr> 
-  <tr>
-    <td>Motor a pasos</td>
-    <td><img src="https://user-images.githubusercontent.com/36056832/166065075-3de31310-6500-41a1-a5a0-23205cb3ebb4.png" width="100"/>
-</td>
-    <td><ul><li>Voltaje: 5V<li>Consumo corriente: 55mA aprox.<li>Ángulo de paso: 5.625 x 1/64.<liReducción: 1/64.<li>Puede ser controlado por un chip ULN2003.<li>También se puede conectar como 2 fases para usar.<li>Dimensiones: 31 * 27 * 19 mm<li>Peso: 35g.</ul></td>
-    <td>4</td>
-  </tr> 
-    <tr>
-    <td>Relevador</td>
-    <td><img src="https://user-images.githubusercontent.com/36056832/166065203-9a1ea36b-8948-4ecb-adbe-8bfd1d670b33.png" width="100" /></td>
-      <td><ul><li>Número de serie: 2ph63083a</li><li>Voltaje de operación: 5V DC</li><li>Máxima salida del relevador (Voltaje/ Corriente): DC 30V/10A, AC 250V/10A</li><li>Rangos de corriente: 10 A (NO) y 5 A (NC)</li><li>Protocolo de comunicación: TTL (3.3 V o 5 V)<li>Tiempo de acción: 10 ms/ 5 ms</li><li>
-        Tamaño : 75 mm x 55 mm x 19.3 mm (largo,ancho, alto)</li><li>Peso: 61 gramos</li><li>Pines:Input: : IN1, IN2, IN3, IN4 , VCC, GND
-Output: Conector hacia la carga(ejemplo, bombilla, bomba de agua,etc). La terminal de relés son COM, NO y NC (Común, Normalmente Abierto y Normalmente Cerrado  respectivamente) están en la  terminal de tornillo,Jumper JDVCC, VCC y GND</li></ul></td>
-    <td>4</td>
-  </tr> 
-    <tr>
-    <td>Motor CD</td>
-    <td><img src="https://user-images.githubusercontent.com/36056832/166065332-364f3cd0-4f18-44f7-85aa-6ad243851ad4.png" width="100" /></td>
-      <td><ul><li>Velocidad De 15000 a 18000 RPM</li><li>Motor 25 x 15 mm</li><li>Engrane</li><li>Peso 16g</li></td>
-    <td>4</td>
-  </tr> 
 </table>
 
 #### Requerimientos
-<table>
-  <tr>
-    <th>No.</th>
-      <th>Requerimiento</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>Medición de variables a partir de sensores de temperatura, humedad, PH, lluvia, luminosidad.</td>
-  </tr>
-  
-  <tr>
-    <td>2</td>
-    <td>Almacenamiento de datos de manera continua y permanente.</td>
-  </tr>
-  
-  <tr>
-    <td>3</td>
-    <td>Graficar los datos almacenados para su análisis en línea</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>Activar el riego automatizado de acuerdo al analisis de datos.</td>
-  </tr>
-  
-  <tr>
-    <td>5</td>
-    <td>Control a partir de aplicación móvil de riego, sombra y protección.</td>
-  </tr>
-  <tr>
-    <td>6</td>
-    <td>Notificar alertas a partir del estado de las variables que involucren un riesgo para la planta.</td>
-  </tr>
-</table>
+|No.  |Requerimiento  |
+|---  |-------------  |
+| 1   |El sistema deberá permitir dar la bienvenida al cliente o visitante a través de lectura de rostro, si la persona es un cliente mediante un Display y/o un repetidor de Voz dará la bienvenida. A su vez, el empleado recibirá una notificación a su dispositivo móvil para su atención.               |
+| 2   |Mediante lectura de código QR a través de dispositivo móvil la persona podrá observar la descripción del producto. |
+| 3   |Mediante realidad aumentada a través de dispositivo móvil el cliente o turista podrá interactuar con las características y uso del producto.|
+| 4   |La persona podrá solicitar la atención del empleado a través de su dispositivo móvil ya sea para muestra del producto o venta del mismo.|
+| 5   |La persona podrá responder la encuesta de salida si fue agradable el servicio al cliente, etc.|
+| 6   |El gerente o dueño del negocio podrá ver estadísticas como: Número de visitantes que llegaron al establecimiento. Número de visitantes que realizaron compra. Encuesta de satisfacción de salida.  |
 
 #### Diagrama inicial
+![image](https://user-images.githubusercontent.com/8560750/166749650-89fba768-4bbc-45c4-93d3-df9e5d08ad4c.png)
 
-![image](https://user-images.githubusercontent.com/96089377/165986643-432dfef7-ffff-4755-a768-ecdb5e8252b4.png)
 
-### Prototipo de pared verde
-
-![imagen](https://user-images.githubusercontent.com/36056832/166520964-2165f99c-b8d2-48a4-a73e-a8643ec4cf40.png)
-
-## Diagrama de Gantt
-
-![imagen](https://user-images.githubusercontent.com/36056832/166818332-4af82aa6-f227-4822-8b7d-903e7d12db7f.png)
-![imagen](https://user-images.githubusercontent.com/36056832/166818508-185b7353-c205-4ee8-b571-563a1fdf220d.png)
-![imagen](https://user-images.githubusercontent.com/36056832/166818681-69eaa091-6b1a-4ad3-8b21-9b3197542efa.png)
-![imagen](https://user-images.githubusercontent.com/36056832/166818792-ef5d557e-3535-4b40-9730-68eff4768e08.png)
-![imagen](https://user-images.githubusercontent.com/36056832/166818871-298a5a7b-f264-483e-a8d4-28888a666edb.png)
-![imagen](https://user-images.githubusercontent.com/36056832/166818935-b87964d3-4344-4dd1-b6a0-9930bdf452eb.png)
-![imagen](https://user-images.githubusercontent.com/36056832/166819014-fa06e4d0-f407-45f9-a57e-38289ecaf25c.png)
-![imagen](https://user-images.githubusercontent.com/36056832/166819094-27be48c1-634b-4f48-9249-5cc6cba5e143.png)
+### Prototipo
 
 
 <!-- Construido con -->
@@ -238,7 +179,7 @@ Contacto.
 
 ## Participantes
 * [Gerardo Reyna Ibarra]()
-* [Anastacio Rodríguez García]()
+* [Anastasio Rodríguez García]()
 * [Gabriel Barrón Rodríguez]()
 
 [contribuidores-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
