@@ -1,0 +1,77 @@
+[
+    {
+        "id": "bbf60ee2c47dd24b",
+        "type": "tab",
+        "label": "Capstone Send Messages",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "eb7994d5f089cbe9",
+        "type": "inject",
+        "z": "bbf60ee2c47dd24b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Este es una prueba capstone",
+        "payloadType": "str",
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "e56c9c27cdc03785"
+            ]
+        ]
+    },
+    {
+        "id": "e56c9c27cdc03785",
+        "type": "node-red-contrib-whatsapp-cmb-send-message",
+        "z": "bbf60ee2c47dd24b",
+        "name": "Tendero",
+        "account": "feb0bdcca78a5ea1",
+        "text": "payload",
+        "inputtypemessage": "msg",
+        "rejectssl": false,
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "27f2c8029b62a346"
+            ]
+        ]
+    },
+    {
+        "id": "27f2c8029b62a346",
+        "type": "debug",
+        "z": "bbf60ee2c47dd24b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "feb0bdcca78a5ea1",
+        "type": "node-red-contrib-whatsapp-cmb-account",
+        "name": "Gabo"
+    }
+]

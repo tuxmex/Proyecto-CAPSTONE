@@ -1,0 +1,139 @@
+[
+    {
+        "id": "24aeb0344a9adeeb",
+        "type": "tab",
+        "label": "Capstone Inserta Cliente",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4a991469b1a1a2b6",
+        "type": "mqtt in",
+        "z": "24aeb0344a9adeeb",
+        "name": "",
+        "topic": "capstone/utng/camara",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "aa3107cbb6f29f72",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "eeef0f693f096fc8"
+            ]
+        ]
+    },
+    {
+        "id": "eeef0f693f096fc8",
+        "type": "json",
+        "z": "24aeb0344a9adeeb",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 370,
+        "y": 100,
+        "wires": [
+            [
+                "c010296e73da68f7",
+                "4b6049f83d4842ea"
+            ]
+        ]
+    },
+    {
+        "id": "c010296e73da68f7",
+        "type": "function",
+        "z": "24aeb0344a9adeeb",
+        "name": "",
+        "func": "msg.topic=\"INSERT INTO cliente (nombre, carpeta, email, celular) VALUES  ('\"+msg.payload.nombre+\"','\"+msg.payload.carpeta+\"','\"+msg.payload.email+\"','\"+msg.payload.celular + \"')\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 100,
+        "wires": [
+            [
+                "8f477dd895c24eb5"
+            ]
+        ]
+    },
+    {
+        "id": "4b6049f83d4842ea",
+        "type": "debug",
+        "z": "24aeb0344a9adeeb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "8f477dd895c24eb5",
+        "type": "sqlite",
+        "z": "24aeb0344a9adeeb",
+        "mydb": "2f6110cac9bde9d5",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Insert Cliente",
+        "x": 710,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "33b3c8ce925fdebd",
+        "type": "comment",
+        "z": "24aeb0344a9adeeb",
+        "name": "Inserta cliente a base de datos Sqlite",
+        "info": "Este flujo inserta registro de cliente a la base de datos clientes",
+        "x": 180,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "aa3107cbb6f29f72",
+        "type": "mqtt-broker",
+        "name": "LocalHost",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "gbarron-integra2",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2f6110cac9bde9d5",
+        "type": "sqlitedb",
+        "db": "/home/gbarron/capstone/database/proyecto.db",
+        "mode": "RWC"
+    }
+]
