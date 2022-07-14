@@ -44,7 +44,7 @@
 
 ### Objetivo del proyecto: 
 
-> Impulsar el incremento de ventas de los pequeños comercios que comercializan productos de Talavera y Cerámica mediante el uso de la tecnología del Internet de las Cosas que ayuden a eficientar la atención al cliente y una experiencia agradable en el comercio.
+> Impulsar el incremento de ventas de los pequeños negocios que comercializan productos de Talavera y Cerámica mediante el uso de la tecnología del Internet de las Cosas que ayuden a eficientar la atención al cliente y una experiencia agradable en el comercio.
 
 ### Descripción general del proyecto
 
