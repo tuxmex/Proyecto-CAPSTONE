@@ -14,7 +14,7 @@
         "method": "GET",
         "ret": "bin",
         "paytoqs": "ignore",
-        "url": "http://172.16.2.76/capture",
+        "url": "http://192.168.1.68/capture",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -100,8 +100,7 @@
         "y": 260,
         "wires": [
             [
-                "bd811d82ce417bdd",
-                "a10a9f1f3a7faf1e"
+                "bd811d82ce417bdd"
             ]
         ]
     },
@@ -110,20 +109,22 @@
         "type": "ui_template",
         "z": "d1d47db59a048d9f",
         "group": "1b4921a5b094ee9c",
-        "name": "Captura de IImagen",
+        "name": "Captura de Imagen",
         "order": 1,
-        "width": 7,
-        "height": 5,
-        "format": "<iframe width=\"100%\" height=\"100%\"\n    src=\"http://172.16.2.76:81/stream\">\n</iframe>",
+        "width": 12,
+        "height": 8,
+        "format": "<style>\n.wrap\n{\n    width: 800px;\n    height: 600px;\n    padding: 0;\n    overflow: hidden;\n}\n\n.frame\n{\n    width: 1280px;\n    height: 786px;\n    border: 1;\n\n    -ms-transform: scale(1.75);\n    -moz-transform: scale(1.75);\n    -o-transform: scale(1.75);\n    -webkit-transform: scale(1.75);\n    transform: scale(1.75);\n\n    -ms-transform-origin: 0 0;\n    -moz-transform-origin: 0 0;\n    -o-transform-origin: 0 0;\n    -webkit-transform-origin: 0 0;\n    transform-origin: 0 0;\n}\n</style>\n\n<div class=\"wrap\">\n<iframe id=\"inlineFrameExample\"\n    title=\"Càmara en Vivo\"\n    width=\"400\"\n    height=\"300\"\n    allow=\"fullscreen\"\n    class=\"frame\">\n</iframe>\n</div>\n<script>\n    (function(scope) {\n        scope.$watch('msg.ip', function(data) {\n            var a = document.getElementById(\"inlineFrameExample\");\n            var url = data + ':81/stream';\n            a.setAttribute(\"src\", url);\n            console.log(\"URL: \" + url);\n        });\n    })(scope);\n</script>\n",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 600,
+        "x": 590,
         "y": 100,
         "wires": [
-            []
+            [
+                "0ce626655471e7f1"
+            ]
         ]
     },
     {
@@ -134,7 +135,7 @@
         "topic": "capstone/facial",
         "qos": "2",
         "datatype": "auto",
-        "broker": "aa3107cbb6f29f72",
+        "broker": "02c2c8eacc2236c8",
         "nl": false,
         "rap": true,
         "rh": 0,
@@ -226,15 +227,13 @@
         "z": "d1d47db59a048d9f",
         "name": "",
         "property": "payload",
-        "action": "",
+        "action": "obj",
         "pretty": false,
-        "x": 570,
+        "x": 550,
         "y": 720,
         "wires": [
             [
-                "681aec220ea4ce3f",
-                "96617b5514fd06cc",
-                "f7817acc7a363811"
+                "e59f9e12fa67a57c"
             ]
         ]
     },
@@ -244,7 +243,7 @@
         "z": "d1d47db59a048d9f",
         "name": "",
         "group": "d95312025038bb8e",
-        "order": 2,
+        "order": 1,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -271,33 +270,16 @@
         "type": "ui_text",
         "z": "d1d47db59a048d9f",
         "group": "d95312025038bb8e",
-        "order": 3,
+        "order": 2,
         "width": 0,
         "height": 0,
         "name": "",
-        "label": "Persona detectada",
-        "format": "{{msg.payload.nombre}}",
+        "label": "Persona",
+        "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 990,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "36ed99d46fa75e10",
-        "type": "ui_text",
-        "z": "d1d47db59a048d9f",
-        "group": "d95312025038bb8e",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Porcentaje de certeza",
-        "format": "{{msg.max}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1040,
-        "y": 780,
+        "x": 1160,
+        "y": 700,
         "wires": []
     },
     {
@@ -305,17 +287,21 @@
         "type": "function",
         "z": "d1d47db59a048d9f",
         "name": "",
-        "func": "msg.max = 100 - msg.max * 100;\nreturn msg;",
+        "func": "msg.max = 100 - msg.max * 100;\nmsg.max = Math.round(msg.max);\n\nemail = msg.payload.email;\n\nconst today = new Date();\n\nvar day = today.getDate();\nvar mm = today.getMonth()+1; \nvar yyyy = today.getFullYear();\n\nvar dd = \"01\";\n\nif (day < 10) {\n     dd = \"0\" + day.toString();\n} else {\n    dd = day.toString();\n}\n\nif (mm < 10) {\n     mm = \"0\" + mm.toString();\n}\n\nfecha = mm + \"/\" + dd + \"/\" + yyyy;\n\nsql = \"Insert Into visita(email, fecha) values ('\" + email + \"','\" + fecha + \"')\";\n\nmsg.topic = sql;\nmsg.atencion = \"Favor de atender \" + msg.payload.nombre;\nmsg.payload = \"Welcome \" + msg.payload.nombre;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
+        "x": 820,
         "y": 780,
         "wires": [
             [
-                "36ed99d46fa75e10"
+                "681aec220ea4ce3f",
+                "e83daf83635e8a23",
+                "3982d55d78fc96e4",
+                "555c3dcd628bca4a",
+                "2e2c1d4a109324ad"
             ]
         ]
     },
@@ -326,43 +312,22 @@
         "name": "",
         "props": [
             {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
+                "p": "ip",
+                "v": "http://192.168.1.68",
                 "vt": "str"
             }
         ],
-        "repeat": "1",
+        "repeat": "5",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 150,
+        "x": 130,
         "y": 100,
         "wires": [
             [
-                "dce312d34bbd3e7a"
+                "d3cdeb62982ef474"
             ]
-        ]
-    },
-    {
-        "id": "dce312d34bbd3e7a",
-        "type": "function",
-        "z": "d1d47db59a048d9f",
-        "name": "",
-        "func": "global.set (\"fecha\", msg.payload);\nglobal.set (\"IP\", \"172.16.2.154\")\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 360,
-        "y": 100,
-        "wires": [
-            []
         ]
     },
     {
@@ -372,7 +337,7 @@
         "name": "",
         "inputMsgField": "lista",
         "outputMsgField": "max",
-        "operation": "max",
+        "operation": "min",
         "constant": "",
         "round": false,
         "decimals": 0,
@@ -426,13 +391,82 @@
         "y": 720,
         "wires": [
             [
-                "da7fe27c47114e33",
-                "5f85535eee231061"
+                "da7fe27c47114e33"
             ]
         ]
     },
     {
-        "id": "a10a9f1f3a7faf1e",
+        "id": "e59f9e12fa67a57c",
+        "type": "switch",
+        "z": "d1d47db59a048d9f",
+        "name": "",
+        "property": "max",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "0.4",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "0.4",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 690,
+        "y": 720,
+        "wires": [
+            [
+                "38a3344308e49191"
+            ],
+            [
+                "96617b5514fd06cc"
+            ]
+        ]
+    },
+    {
+        "id": "38a3344308e49191",
+        "type": "function",
+        "z": "d1d47db59a048d9f",
+        "name": "",
+        "func": "email = \"Nuevo\";\n\nconst today = new Date();\n\nvar day = today.getDate();\nvar mm = today.getMonth()+1; \nvar yyyy = today.getFullYear();\n\nvar dd = \"01\";\nif (day < 10) {\n     dd = \"0\" + day.toString();\n} else {\n    dd = day.toString();\n}\n\nif (mm < 10) {\n     mm = \"0\" + mm.toString();\n}\n\nfecha = mm + \"/\" + dd + \"/\" + yyyy;\n\nsql = \"Insert Into visita(email, fecha) values ('\" + email + \"','\" + fecha + \"')\";\n\nmsg.topic = sql;\nmsg.atencion = \"Favor de atender cliente nuevo\";\nmsg.payload = \"Welcome to Store\";\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 700,
+        "wires": [
+            [
+                "681aec220ea4ce3f",
+                "fbbbfac1b36e36ff",
+                "3982d55d78fc96e4",
+                "555c3dcd628bca4a",
+                "2e2c1d4a109324ad"
+            ]
+        ]
+    },
+    {
+        "id": "3982d55d78fc96e4",
+        "type": "sqlite",
+        "z": "d1d47db59a048d9f",
+        "mydb": "2f6110cac9bde9d5",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Insert Visita",
+        "x": 1170,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e83daf83635e8a23",
         "type": "debug",
         "z": "d1d47db59a048d9f",
         "name": "",
@@ -440,16 +474,16 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "command",
+        "complete": "topic",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1300,
-        "y": 220,
+        "x": 940,
+        "y": 900,
         "wires": []
     },
     {
-        "id": "5f85535eee231061",
+        "id": "fbbbfac1b36e36ff",
         "type": "debug",
         "z": "d1d47db59a048d9f",
         "name": "",
@@ -457,16 +491,49 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "filename",
+        "complete": "topic",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 270,
-        "y": 800,
+        "x": 1040,
+        "y": 620,
         "wires": []
     },
     {
-        "id": "f7817acc7a363811",
+        "id": "555c3dcd628bca4a",
+        "type": "node-red-contrib-whatsapp-cmb-send-message",
+        "z": "d1d47db59a048d9f",
+        "name": "Send WhatsApp",
+        "account": "feb0bdcca78a5ea1",
+        "text": "payload",
+        "inputtypemessage": "msg",
+        "rejectssl": false,
+        "x": 1180,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e2c1d4a109324ad",
+        "type": "mqtt out",
+        "z": "d1d47db59a048d9f",
+        "name": "",
+        "topic": "capstone/utng/ledmatrix",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "e3d8e2223ef53feb",
+        "x": 1210,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "0ce626655471e7f1",
         "type": "debug",
         "z": "d1d47db59a048d9f",
         "name": "",
@@ -474,13 +541,39 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload.nombre",
-        "targetType": "msg",
+        "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1080,
-        "y": 660,
+        "x": 590,
+        "y": 180,
         "wires": []
+    },
+    {
+        "id": "d3cdeb62982ef474",
+        "type": "change",
+        "z": "d1d47db59a048d9f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ip",
+                "pt": "msg",
+                "to": "http://192.168.1.68",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 100,
+        "wires": [
+            [
+                "d6bcd5377b0b7956"
+            ]
+        ]
     },
     {
         "id": "c2a2799980ad96ed",
@@ -509,20 +602,20 @@
         "tab": "df3eb9a279d8b929",
         "order": 1,
         "disp": true,
-        "width": "7",
+        "width": 12,
         "collapse": false,
         "className": ""
     },
     {
-        "id": "aa3107cbb6f29f72",
+        "id": "02c2c8eacc2236c8",
         "type": "mqtt-broker",
-        "name": "LocalHost",
-        "broker": "localhost",
+        "name": "Capstone Facial",
+        "broker": "192.168.1.70",
         "port": "1883",
-        "clientid": "gbarron-integra2",
+        "clientid": "",
         "autoConnect": true,
         "usetls": false,
-        "protocolVersion": "4",
+        "protocolVersion": "3",
         "keepalive": "60",
         "cleansession": true,
         "birthTopic": "",
@@ -551,6 +644,43 @@
         "className": ""
     },
     {
+        "id": "2f6110cac9bde9d5",
+        "type": "sqlitedb",
+        "db": "/home/gbarron/capstone/src/capstone.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "feb0bdcca78a5ea1",
+        "type": "node-red-contrib-whatsapp-cmb-account",
+        "name": "Gabo"
+    },
+    {
+        "id": "e3d8e2223ef53feb",
+        "type": "mqtt-broker",
+        "name": "capstone/utng/ledmatrix",
+        "broker": "127.0.0.1",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
         "id": "61ec25a9be0ed64a",
         "type": "ui_group",
         "name": "Display QrCode",
@@ -566,6 +696,7 @@
         "type": "ui_tab",
         "name": "Reconocimiento Facial",
         "icon": "dashboard",
+        "order": 3,
         "disabled": false,
         "hidden": false
     }

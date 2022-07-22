@@ -25,9 +25,10 @@ def main(argv):
          db_src = arg
    #print ('Imagen a analizar ', img_src)
    #print ('Biblioteca de rostros ', db_src)
-   df = DeepFace.find(img_path = img_src,db_path= db_src, enforce_detection="false")
+   df = DeepFace.find(img_path = img_src,db_path= db_src,model_name='VGG-Face',enforce_detection=False)
+   #df = DeepFace.stream(db_path= db_src)
    #print ("Resultado ")
-   #print (df)
+   print (df)
    result = df.to_json(orient="index")
    #print ("raw ", df)
    #print ("size of ", df[0].size)

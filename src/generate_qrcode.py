@@ -31,7 +31,7 @@ def main(argv):
     qr.add_data(code)
     qr.make(fit=True)
     img = qr.make_image(fill_color="black", back_color="white").convert('RGB')
-    img.save("/home/gbarron/capstone/qrcodes/qrcode.png")
+    img.save("/home/gbarron/capstone/src/qrcodes/qrcode.png")
 
 if __name__ == "__main__":
    main(sys.argv[1:])

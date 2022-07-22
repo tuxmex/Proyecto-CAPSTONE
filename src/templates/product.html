@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Còdigo de producto {{ producto['codigo'] }}</h3>
+{% if producto  %}
+<table class="styled-table">
+  <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nombre</td>
+      <td>{{ producto['nombre']}}</td>
+    </tr>
+    <tr class="active-row">
+      <td>Precio</td>
+      <td>{{ producto['precio']}}</td>
+    </tr>
+    <tr>
+      <td>Descripciòn</td>
+      <td>{{ producto['descripcion']}}</td>
+    </tr>
+    <tr class="active-row">
+      <td>Existencias</td>
+      <td>{{ producto['existencia']}}</td>
+    </tr>
+    <tr>
+      <td>Ofertas</td>
+      <td>{{ producto['oferta']}}</td>
+    </tr>
+
+  </tbody>  
+</table>
+{% else %}
+<h2>No hay registros</h2>
+{% endif %}
+{% endblock %}

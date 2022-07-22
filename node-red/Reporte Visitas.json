@@ -1,0 +1,309 @@
+[
+    {
+        "id": "292c3762660a0051",
+        "type": "tab",
+        "label": "Capstone Reporte Visitas",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bf379f3dddfda51b",
+        "type": "sqlite",
+        "z": "292c3762660a0051",
+        "mydb": "2f6110cac9bde9d5",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Consulta de Visitas",
+        "x": 670,
+        "y": 220,
+        "wires": [
+            [
+                "895713b69a3416e6",
+                "4637ceed1d76b906",
+                "4a51915f460bfa62"
+            ]
+        ]
+    },
+    {
+        "id": "895713b69a3416e6",
+        "type": "ui_table",
+        "z": "292c3762660a0051",
+        "group": "2e4cced2af3adf31",
+        "name": "Visitas",
+        "order": 3,
+        "width": 12,
+        "height": 6,
+        "columns": [
+            {
+                "field": "email",
+                "title": "Correo Electrònico",
+                "width": "300",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "fecha",
+                "title": "Fecha",
+                "width": "200",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "atendido",
+                "title": "Atendido",
+                "width": "100",
+                "align": "right",
+                "formatter": "tickCross",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 650,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8c14848a4b50476a",
+        "type": "ui_chart",
+        "z": "292c3762660a0051",
+        "name": "",
+        "group": "7664ca674e306a1c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 990,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa2112aefd5813be",
+        "type": "ui_date_picker",
+        "z": "292c3762660a0051",
+        "name": "inicial",
+        "label": "Inicial",
+        "group": "2e4cced2af3adf31",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 90,
+        "y": 220,
+        "wires": [
+            [
+                "282b3e94e686a316"
+            ]
+        ]
+    },
+    {
+        "id": "282b3e94e686a316",
+        "type": "function",
+        "z": "292c3762660a0051",
+        "name": "",
+        "func": "var today = new Date(msg.payload);\n\nday = today.getDate();\n\nvar mm = today.getMonth()+1; \nvar yyyy = today.getFullYear();\n\ndd=\"01\";\nif (day < 10) {\n     dd = \"0\" + day.toString();\n} else {\n    dd = day.toString();\n}\n\nif (mm < 10) {\n     mm = \"0\" + mm.toString();\n} else {\n    mm = mm.toString();\n}\n\nfecha = yyyy + \"-\" + mm + \"-\" + dd;\n\nglobal.set(\"inicial\", fecha);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 220,
+        "wires": [
+            [
+                "681f99476b71d88f"
+            ]
+        ]
+    },
+    {
+        "id": "01424395b9fa7139",
+        "type": "ui_date_picker",
+        "z": "292c3762660a0051",
+        "name": "",
+        "label": "Final",
+        "group": "2e4cced2af3adf31",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 90,
+        "y": 300,
+        "wires": [
+            [
+                "c06276ae11eda167"
+            ]
+        ]
+    },
+    {
+        "id": "c06276ae11eda167",
+        "type": "function",
+        "z": "292c3762660a0051",
+        "name": "",
+        "func": "var today = new Date(msg.payload);\n\nday = today.getDate();\n\nvar mm = today.getMonth()+1; \nvar yyyy = today.getFullYear();\n\ndd = \"01\";\nif (day < 10) {\n     dd = \"0\" + day.toString();\n} else {\n    dd = day.toString();\n}\n\nif (mm < 10) {\n     mm = \"0\" + mm.toString();\n} else {\n    mm = mm.toString();\n}\n\nfecha = yyyy + \"-\" + mm + \"-\" + dd;\n\nglobal.set(\"final\", fecha);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 300,
+        "wires": [
+            [
+                "681f99476b71d88f"
+            ]
+        ]
+    },
+    {
+        "id": "681f99476b71d88f",
+        "type": "function",
+        "z": "292c3762660a0051",
+        "name": "",
+        "func": "inicial = global.get(\"inicial\");\nfinal = global.get(\"final\");\n\nsql = \"\";\nif(inicial === undefined && final !== undefined) {\n    sql = \"select * from visita \" + \n      \" group by email, fecha order by fecha\";\n} else if(inicial === undefined && final !== undefined) {\n    sql = \"select * from visita \" + \n      \" WHERE fecha between '\" + inicial + \"' and '\" +  inicial +\n      \"' group by email, fecha order by fecha\";\n} else if(inicial !== undefined && final === undefined) {\n    sql = \"select * from visita \" + \n      \" WHERE fecha between '\" + final + \"' and '\" +  final +\n      \"' group by email, fecha order by fecha\";\n}  else {\n\n   sql = \"select * from visita \" + \n      \" WHERE fecha between '\" + inicial + \"' and '\" +  final +\n      \"' group by email, fecha order by fecha\";\n}\nmsg.topic = sql\nmsg.payload = \"{\\\"Inicial\\\":\\\"\" + inicial + \"\\\",final\\\":\\\"\" + final + \"\\\" }\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 260,
+        "wires": [
+            [
+                "bf379f3dddfda51b"
+            ]
+        ]
+    },
+    {
+        "id": "4637ceed1d76b906",
+        "type": "function",
+        "z": "292c3762660a0051",
+        "name": "",
+        "func": "var meses = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];\n\n//Valores de la consulta\nlet values = Object.values(msg.payload);\nconst labelSet = new Set(); //Etiquetas de meses\nconst dataAtendidoMap = new Map(); //Total de atendidos\nconst dataNoAtendidoMap = new Map(); //Total de NO Atendidos\nvar data = []; //Datos a graficar\n\nvar i;\nvar mes;\n\n/*\n   Inicializa datos de los meses\n*/\nfor (i = 0; i < values.length; i++) {\n    var date = new Date(values[i].fecha);\n    mes = date.getMonth(); //Extrae el mes de registro visitado\n    var strMes = meses[mes]; //Extrae valor en texto\n    \n    if(labelSet.has(strMes) === false) {\n        labelSet.add(strMes); //ocupa set para no duplicidad\n        dataNoAtendidoMap.set(strMes, 0);\n        dataAtendidoMap.set(strMes, 0);\n    }\n}\n\n\nfor (i = 0; i < values.length; i++) {\n    date = new Date(values[i].fecha);\n    mes = date.getMonth(); //Extrae el mes de registro visitado\n    strMes = meses[mes]; //Extrae valor en texto\n    labelSet.add(strMes); //ocupa set para no duplicidad\n    atendido = parseInt(values[i].atendido); //Extrae valor de atendido\n    \n    if(atendido === 0) { //Contabiliza los NO Atendidos\n    \n        var value = parseInt(dataNoAtendidoMap.get(strMes) + 1);\n        dataNoAtendidoMap.set(strMes, value);\n        \n    } else { // contabiliza los NO Atendidos\n        \n       value = parseInt(dataAtendidoMap.get(strMes) + 1);\n       dataAtendidoMap.set(strMes, value);\n    }\n}\n\n\nmsg.lista = JSON.stringify(Object.fromEntries(dataNoAtendidoMap));\nmsg.lista1 = JSON.stringify(Object.fromEntries(dataAtendidoMap));\n\nlabels = Array.from(labelSet); //Convierte Set a Array\n/*\n  Formatea datos para grafica \n*/\nvalNoAtendidos = 0;\nvalAtendidos = 0;\n\nvar dataMap= new Map();\ndataMap.set(\"aten\", []);\ndataMap.set(\"noaten\", []);\n\nfor (i = 0; i < labels.length; i++) {\n    \n    for (i = 0; i < dataNoAtendidoMap.size; i++) {\n        mesNoAtendidos = dataNoAtendidoMap.get((labels[i]));    \n        dataMap.get(\"aten\").push(mesNoAtendidos);    \n        mesAtendidos = dataAtendidoMap.get((labels[i]));\n        dataMap.get(\"noaten\").push(mesAtendidos);    \n    }\n}\n\ndata.push(dataMap.get(\"aten\"));\ndata.push(dataMap.get(\"noaten\"));\nmsg.lista2 = data;\nmsg.payload=[{\n    \"series\": [\"NoAtendidos\", \"Atendidos\"],\n    \"data\": data,\n    \"labels\": labels\n}];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 300,
+        "wires": [
+            [
+                "8c14848a4b50476a",
+                "f5b1015d1aa2c4cf"
+            ]
+        ]
+    },
+    {
+        "id": "f5b1015d1aa2c4cf",
+        "type": "debug",
+        "z": "292c3762660a0051",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1190,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "4a51915f460bfa62",
+        "type": "debug",
+        "z": "292c3762660a0051",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "2f6110cac9bde9d5",
+        "type": "sqlitedb",
+        "db": "/home/gbarron/capstone/src/capstone.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "2e4cced2af3adf31",
+        "type": "ui_group",
+        "name": "Reporte Visitas",
+        "tab": "8e2b8309ad1d56e4",
+        "order": 1,
+        "disp": true,
+        "width": 12,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7664ca674e306a1c",
+        "type": "ui_group",
+        "name": "Gauge Visitas",
+        "tab": "8e2b8309ad1d56e4",
+        "order": 2,
+        "disp": true,
+        "width": 11,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8e2b8309ad1d56e4",
+        "type": "ui_tab",
+        "name": "Reportes",
+        "icon": "dashboard",
+        "order": 6,
+        "disabled": false,
+        "hidden": false
+    }
+]

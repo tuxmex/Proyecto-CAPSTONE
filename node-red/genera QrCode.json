@@ -36,7 +36,7 @@
         "topicType": "msg",
         "splitLayout": "",
         "className": "",
-        "x": 190,
+        "x": 150,
         "y": 100,
         "wires": [
             [
@@ -49,19 +49,20 @@
         "type": "function",
         "z": "d9ac5495760b4fa9",
         "name": "",
-        "func": "query = \"SELECT * from producto WHERE codigo = '\" + msg.payload.code + \"'\";\nmsg.topic = query;\nmsg.command = \" -c \" + msg.payload.code;\nmsg.payload = msg.payload.code;\nreturn msg;",
+        "func": "query = \"SELECT * from producto WHERE codigo = '\" + msg.payload.code + \"'\";\nmsg.topic = query;\nmsg.command = \" -c \" + msg.payload.code;\nmsg.payload = \"http://192.168.1.70:5000/\" + msg.payload.code;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 200,
-        "y": 220,
+        "x": 400,
+        "y": 80,
         "wires": [
             [
                 "8d074fe4d7eb3731",
                 "119516a204302eec",
-                "2eef85a924980ee6"
+                "2eef85a924980ee6",
+                "943fada1aa2052cf"
             ]
         ]
     },
@@ -77,8 +78,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 470,
-        "y": 400,
+        "x": 550,
+        "y": 420,
         "wires": [
             [],
             [],
@@ -131,7 +132,7 @@
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "",
-        "x": 520,
+        "x": 500,
         "y": 280,
         "wires": [
             [
@@ -248,6 +249,44 @@
         "wires": []
     },
     {
+        "id": "943fada1aa2052cf",
+        "type": "exec",
+        "z": "d9ac5495760b4fa9",
+        "command": "sh /home/gbarron/capstone/src/upflask.sh",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Levantar Flask",
+        "x": 420,
+        "y": 480,
+        "wires": [
+            [],
+            [],
+            [
+                "d4ba4236bc10b1db"
+            ]
+        ]
+    },
+    {
+        "id": "d4ba4236bc10b1db",
+        "type": "debug",
+        "z": "d9ac5495760b4fa9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 500,
+        "wires": []
+    },
+    {
         "id": "5ed86a0b10818742",
         "type": "ui_group",
         "name": "Captura Code",
@@ -272,7 +311,7 @@
     {
         "id": "2f6110cac9bde9d5",
         "type": "sqlitedb",
-        "db": "/home/gbarron/capstone/database/proyecto.db",
+        "db": "/home/gbarron/capstone/src/capstone.db",
         "mode": "RWC"
     },
     {
@@ -291,7 +330,7 @@
         "type": "ui_tab",
         "name": "Codigo QrCode",
         "icon": "dashboard",
-        "order": 4,
+        "order": 2,
         "disabled": false,
         "hidden": false
     }

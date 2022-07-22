@@ -20,10 +20,10 @@
 
 #include "camera_pins.h"
 
-const char* ssid = "UTNG_Docencia";
-const char* password = "UtNg2020@#$";
-//const char* ssid = "INTERNET MAESTROS 2.4";
-//const char* password = "MaestrosCBTis75";
+//const char* ssid = "UTNG_Docencia";
+//const char* password = "UtNg2020@#$";
+const char* ssid = "INFINITUM306B_2.4";
+const char* password = "5bAtmtmNXt";
 
 void startCameraServer();
 
@@ -66,10 +66,10 @@ void setup() {
     config.fb_count = 1;
   }
 
-#if defined(CAMERA_MODEL_ESP_EYE)
-  pinMode(13, INPUT_PULLUP);
-  pinMode(14, INPUT_PULLUP);
-#endif
+  #if defined(CAMERA_MODEL_ESP_EYE)
+    pinMode(13, INPUT_PULLUP);
+    pinMode(14, INPUT_PULLUP);
+  #endif
 
   // camera init
   esp_err_t err = esp_camera_init(&config);
@@ -88,10 +88,10 @@ void setup() {
   // drop down frame size for higher initial frame rate
   s->set_framesize(s, FRAMESIZE_QVGA);
 
-#if defined(CAMERA_MODEL_M5STACK_WIDE) || defined(CAMERA_MODEL_M5STACK_ESP32CAM)
-  s->set_vflip(s, 1);
-  s->set_hmirror(s, 1);
-#endif
+  #if defined(CAMERA_MODEL_M5STACK_WIDE) || defined(CAMERA_MODEL_M5STACK_ESP32CAM)
+    s->set_vflip(s, 1);
+    s->set_hmirror(s, 1);
+  #endif
 
   WiFi.begin(ssid, password);
 

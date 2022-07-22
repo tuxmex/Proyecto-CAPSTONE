@@ -15,7 +15,7 @@
         "topic": "capstone/utng/camara",
         "qos": "2",
         "datatype": "auto",
-        "broker": "aa3107cbb6f29f72",
+        "broker": "02c2c8eacc2236c8",
         "nl": false,
         "rap": true,
         "rh": 0,
@@ -105,15 +105,15 @@
         "wires": []
     },
     {
-        "id": "aa3107cbb6f29f72",
+        "id": "02c2c8eacc2236c8",
         "type": "mqtt-broker",
-        "name": "LocalHost",
-        "broker": "localhost",
+        "name": "Capstone Facial",
+        "broker": "192.168.1.70",
         "port": "1883",
-        "clientid": "gbarron-integra2",
+        "clientid": "",
         "autoConnect": true,
         "usetls": false,
-        "protocolVersion": "4",
+        "protocolVersion": "3",
         "keepalive": "60",
         "cleansession": true,
         "birthTopic": "",
@@ -133,7 +133,7 @@
     {
         "id": "2f6110cac9bde9d5",
         "type": "sqlitedb",
-        "db": "/home/gbarron/capstone/database/proyecto.db",
+        "db": "/home/gbarron/capstone/src/capstone.db",
         "mode": "RWC"
     }
 ]

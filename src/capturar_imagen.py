@@ -4,6 +4,7 @@ from tkinter import ttk
 from tkinter import messagebox
 from pathlib import Path
 from turtle import title
+from xmlrpc.client import boolean
 from PIL import Image, ImageTk
 import paho.mqtt.client as mqtt
 import cv2 
@@ -14,7 +15,7 @@ import os
 import json
 import re 
 
-url= 'http://172.16.2.76:81/stream'
+url= 'http://192.168.1.69:81/stream'
 winName = 'Proyecto CapStone'
 cv2.namedWindow(winName, cv2.WINDOW_AUTOSIZE)
 escala = 80
@@ -43,7 +44,7 @@ def iniciarCamara():
     txtNombre.focus()
     contador = 0
     isNewClient = True
-    camara = cv2.VideoCapture(0)
+    camara = cv2.VideoCapture(url)
     capturaImagen()
 
 
@@ -128,6 +129,7 @@ ancho_ventana = 960
 alto_ventana = 540
 coordX = 80
 coordY = 80
+isCorrecto = True
 
 x_ventana = root.winfo_screenwidth() // 2 - ancho_ventana // 2
 y_ventana = root.winfo_screenheight() // 2 - alto_ventana // 2
@@ -135,7 +137,7 @@ y_ventana = root.winfo_screenheight() // 2 - alto_ventana // 2
 posicion = str(ancho_ventana) + "x" + str(alto_ventana) + "+" + str(x_ventana) + "+" + str(y_ventana)
 root.geometry(posicion)
 root.title("Registro de Cliente")
-root.overrideredirect(True)
+#root.overrideredirect(True)
 
 lblTitulo = Label(root, text="Registro de cliente",width=20,font=("bold", 20))
 lblTitulo.place(x=90,y=20)
@@ -181,20 +183,26 @@ lblEmail = Label(root, text="Email",width=20,font=("bold", 10))
 lblEmail.place(x=68,y=coordY + 100)
 
 txtEmail = Entry(root)
+isCorrecto = False
 txtEmail.place(x=240,y=coordY + 100)
 
 def lost_focus_email( event):
     lstEmail = txtEmail.get().split()
-    print(len(lstEmail))
+    
     if len(lstEmail) < 1:
         messagebox.showerror(message="El Email debe tener un valor")
         txtEmail.focus()
+        isCorrecto = False
         return
 
     regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
     if(not(re.fullmatch(regex, lstEmail[0]))):
         messagebox.showerror(message="El Email es incorrecto")
         txtEmail.focus()
+        isCorrecto = False
+        return
+        
+    isCorrecto = True
 
 txtEmail.bind("<FocusOut>", lost_focus_email)
 
@@ -204,6 +212,9 @@ lblCelular.place(x=80,y=coordY + 150)
 def lost_focus_celular( event):
     lstCelular = txtCelular.get().split()
     print(len(lstCelular))
+    if isCorrecto == False:
+        txtEmail.focus()
+        return 
     if len(lstCelular) < 1:
         messagebox.showerror(message="Ingresar un telèono correcto")
         txtCelular.focus()
@@ -213,6 +224,7 @@ def lost_focus_celular( event):
     if(not(re.fullmatch(regex, lstCelular[0]))):
         messagebox.showerror(message="El Telefono es incorrecto")
         txtCelular.focus()
+        return
 
 txtCelular = Entry(root)
 txtCelular.place(x=240,y=coordY + 150)
